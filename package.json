@@ -1,0 +1,49 @@
+{
+  "name": "js-boilerplate-component",
+  "version": "1.0.1",
+  "type": "module",
+  "main": "index.js",
+  "repository": "https://github.com/pandasuite/js-boilerplate-component.git",
+  "private": true,
+  "scripts": {
+    "start": "vite",
+    "build": "rm -rf ./pandasuite-component.zip && vite build && cd build && zip -r -X '../pandasuite-component.zip' *",
+    "release": "yarn build && release-it --no-npm.publish",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.18.0",
+    "globals": "^16.0.0",
+    "postcss": "^8.5.1",
+    "release-it": "^19.2.4",
+    "tailwindcss": "^3.4.19",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "pandasuite-bridge": "^5.0.5"
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "assets": [
+        "pandasuite-component.zip"
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "Chrome >= 87",
+      "Android >= 5",
+      "iOS >= 12"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

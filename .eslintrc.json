@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": ["airbnb-base"],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "rules": {
+    "quotes": ["error", "double"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/vite.config.js",
+          "**/*.config.js",
+          "**/scripts/**",
+          "**/tests/**"
+        ]
+      }
+    ]
+  }
+}
