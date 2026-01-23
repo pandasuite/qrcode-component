@@ -4,101 +4,156 @@
 
   "system": {
     "localization": false,
-    "actions": [
-      {
-        "id": "toMarker",
-        "name": "Change Image",
-        "locale_name": {
-          "fr_FR": "Change Image"
-        },
-        "params": [
-          {
-            "id": "useless",
-            "name": "Useless",
-            "locale_name": { "fr_FR": "Inutile" },
-            "type": "Boolean"
-          }
-        ]
-      }
-    ],
-    "events": [
-      {
-        "id": "triggerMarker",
-        "name": "Image",
-        "locale_name": {
-          "fr_FR": "Image"
-        }
-      }
-    ],
-    "markers": [
-      {
-        "params": [
-          {
-            "id": "src",
-            "name": "Source",
-            "locale_name": { "fr_FR": "Source" },
-            "type": "String"
-          }
-        ]
-      }
-    ]
+    "markers": false
   },
 
   "properties": [
     {
-      "id": "searchTerm",
-      "name": "Search Term",
+      "id": "text",
+      "name": "Text",
       "locale_name": {
-        "fr_FR": "Terme de recherche"
+        "fr_FR": "Texte"
       },
       "type": "String",
-      "value": "panda"
+      "bind": {
+        "style": "TextArea",
+        "lines": 1
+      },
+      "bindable": true,
+      "value": "https://pandasuite.com"
+    },
+    {
+      "id": "errorCorrectionLevel",
+      "name": "Error Correction",
+      "locale_name": {
+        "fr_FR": "Correction d'erreur"
+      },
+      "type": "Dropdown",
+      "value": "M",
+      "items": [
+        {
+          "id": "L",
+          "name": "Basic",
+          "locale_name": {
+            "fr_FR": "Basique"
+          }
+        },
+        {
+          "id": "M",
+          "name": "Standard",
+          "locale_name": {
+            "fr_FR": "Standard"
+          }
+        },
+        {
+          "id": "Q",
+          "name": "High",
+          "locale_name": {
+            "fr_FR": "Élevé"
+          }
+        },
+        {
+          "id": "H",
+          "name": "Maximum",
+          "locale_name": {
+            "fr_FR": "Maximum"
+          }
+        }
+      ],
+      "separator": true
+    },
+    {
+      "id": "darkColor",
+      "name": "Foreground Color",
+      "locale_name": {
+        "fr_FR": "Couleur des modules"
+      },
+      "type": "Color",
+      "value": "#000000"
+    },
+    {
+      "id": "lightColor",
+      "name": "Background Color",
+      "locale_name": {
+        "fr_FR": "Couleur de fond"
+      },
+      "type": "Color",
+      "value": "#FFFFFF"
+    },
+    {
+      "id": "margin",
+      "name": "Margin",
+      "locale_name": {
+        "fr_FR": "Marge"
+      },
+      "type": "Integer",
+      "value": 4
     }
   ],
 
   "events": [
     {
-      "id": "imageChanged",
-      "name": "Image Changed",
+      "id": "onGenerated",
+      "name": "QR Code Generated",
       "locale_name": {
-        "fr_FR": "Image Changée"
+        "fr_FR": "QR Code généré"
+      },
+      "queryable": {
+        "text": "https://pandasuite.com",
+        "__desc_text": {
+          "name": "Encoded text",
+          "locale_name": {
+            "fr_FR": "Texte encodé"
+          }
+        }
+      }
+    },
+    {
+      "id": "onError",
+      "name": "Generation Error",
+      "locale_name": {
+        "fr_FR": "Erreur de génération"
+      },
+      "queryable": {
+        "error": "Error message",
+        "__desc_error": {
+          "name": "Error message",
+          "locale_name": {
+            "fr_FR": "Message d'erreur"
+          }
+        }
       }
     }
   ],
 
   "actions": [
     {
-      "id": "changeColor",
-      "name": "Change Color",
+      "id": "setText",
+      "name": "Set Text",
+      "locale_name": {
+        "fr_FR": "Définir le texte"
+      },
       "params": [
         {
-          "id": "backgroundColor",
-          "name": "Background Color",
+          "id": "text",
+          "name": "Text",
           "locale_name": {
-            "fr_FR": "Couleur de fond"
+            "fr_FR": "Texte"
           },
           "type": "String",
-          "value": "#FFFFFF"
+          "bindable": true
         }
       ]
     }
   ],
 
-  "synchronization": [
-    {
-      "id": "synchroImages",
-      "name": "Synchronize images",
+  "queryable": {
+    "text": "https://pandasuite.com",
+    "__desc_text": {
+      "name": "Encoded text",
       "locale_name": {
-        "fr_FR": "Synchroniser images"
+        "fr_FR": "Texte encodé"
       }
     }
-  ],
-
-  "resources": [
-    {
-      "id": "my_image.png",
-      "type": "Image",
-      "localization": false
-    }
-  ]
+  }
 }

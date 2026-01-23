@@ -1,0 +1,16 @@
+diff --git a/node_modules/qrcode/lib/renderer/canvas.js b/node_modules/qrcode/lib/renderer/canvas.js
+index 42050cf..898b86d 100644
+--- a/node_modules/qrcode/lib/renderer/canvas.js
++++ b/node_modules/qrcode/lib/renderer/canvas.js
+@@ -3,11 +3,8 @@ const Utils = require('./utils')
+ function clearCanvas (ctx, canvas, size) {
+   ctx.clearRect(0, 0, canvas.width, canvas.height)
+ 
+-  if (!canvas.style) canvas.style = {}
+   canvas.height = size
+   canvas.width = size
+-  canvas.style.height = size + 'px'
+-  canvas.style.width = size + 'px'
+ }
+ 
+ function getCanvasElement () {
