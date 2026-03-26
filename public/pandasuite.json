@@ -1,12 +1,18 @@
 {
+  "meta": {
+    "stype": "qrcode",
+    "componentURL": "https://github.com/pandasuite/qrcode-component/",
+    "description": "Generates and displays QR codes from dynamic text or URLs. Supports data binding, custom colors, error correction levels, and quiet zone configuration.",
+    "locale_description": {
+      "fr_FR": "Génère et affiche des codes QR à partir de texte ou d'URLs dynamiques. Supporte le binding de données, les couleurs personnalisées, les niveaux de correction d'erreur et la configuration de la zone calme."
+    }
+  },
   "version": "2.0.0",
   "main": "",
-
   "system": {
     "localization": false,
     "markers": false
   },
-
   "properties": [
     {
       "id": "text",
@@ -20,7 +26,11 @@
         "lines": 1
       },
       "bindable": true,
-      "value": "https://pandasuite.com"
+      "value": "https://pandasuite.com",
+      "description": "Text or URL to encode in the QR code.",
+      "locale_description": {
+        "fr_FR": "Texte ou URL à encoder dans le code QR."
+      }
     },
     {
       "id": "errorCorrectionLevel",
@@ -60,7 +70,11 @@
           }
         }
       ],
-      "separator": true
+      "separator": true,
+      "description": "Error correction level (L, M, Q, H) — higher levels make the QR code more resistant to damage.",
+      "locale_description": {
+        "fr_FR": "Niveau de correction d'erreur (L, M, Q, H) — les niveaux plus élevés rendent le code QR plus résistant aux dommages."
+      }
     },
     {
       "id": "darkColor",
@@ -69,7 +83,11 @@
         "fr_FR": "Couleur des modules"
       },
       "type": "Color",
-      "value": "#000000"
+      "value": "#000000",
+      "description": "Color of the dark modules (dots) in the QR code.",
+      "locale_description": {
+        "fr_FR": "Couleur des modules sombres (points) du code QR."
+      }
     },
     {
       "id": "lightColor",
@@ -78,7 +96,11 @@
         "fr_FR": "Couleur de fond"
       },
       "type": "Color",
-      "value": "#FFFFFF"
+      "value": "#FFFFFF",
+      "description": "Color of the light modules (background) in the QR code.",
+      "locale_description": {
+        "fr_FR": "Couleur des modules clairs (fond) du code QR."
+      }
     },
     {
       "id": "margin",
@@ -87,10 +109,13 @@
         "fr_FR": "Marge"
       },
       "type": "Integer",
-      "value": 4
+      "value": 4,
+      "description": "Quiet zone margin around the QR code in modules.",
+      "locale_description": {
+        "fr_FR": "Marge de zone calme autour du code QR en modules."
+      }
     }
   ],
-
   "events": [
     {
       "id": "onGenerated",
@@ -104,8 +129,16 @@
           "name": "Encoded text",
           "locale_name": {
             "fr_FR": "Texte encodé"
+          },
+          "description": "The text that was encoded in the QR code.",
+          "locale_description": {
+            "fr_FR": "Le texte qui a été encodé dans le code QR."
           }
         }
+      },
+      "description": "Fires when the QR code is successfully generated.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand le code QR est généré avec succès."
       }
     },
     {
@@ -120,12 +153,19 @@
           "name": "Error message",
           "locale_name": {
             "fr_FR": "Message d'erreur"
+          },
+          "description": "Error message describing what went wrong.",
+          "locale_description": {
+            "fr_FR": "Message d'erreur décrivant ce qui s'est mal passé."
           }
         }
+      },
+      "description": "Fires when QR code generation fails.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand la génération du code QR échoue."
       }
     }
   ],
-
   "actions": [
     {
       "id": "setText",
@@ -141,18 +181,29 @@
             "fr_FR": "Texte"
           },
           "type": "String",
-          "bindable": true
+          "bindable": true,
+          "description": "New text or URL to encode.",
+          "locale_description": {
+            "fr_FR": "Nouveau texte ou URL à encoder."
+          }
         }
-      ]
+      ],
+      "description": "Update the QR code text programmatically.",
+      "locale_description": {
+        "fr_FR": "Mettre à jour le texte du code QR par programmation."
+      }
     }
   ],
-
   "queryable": {
     "text": "https://pandasuite.com",
     "__desc_text": {
       "name": "Encoded text",
       "locale_name": {
         "fr_FR": "Texte encodé"
+      },
+      "description": "Current text encoded in the QR code, available for data binding.",
+      "locale_description": {
+        "fr_FR": "Texte actuel encodé dans le code QR, disponible pour le binding de données."
       }
     }
   }
